@@ -1,0 +1,20 @@
+<div class='container'>
+
+  <section class="username">
+    <h2>Github Score-cerer</h2>
+    <h4>are you a github wizard? (auto-generated opinion available below!)</h4>
+
+    <form (submit)="getScore()" #formData='ngForm'>
+      <h5>github username</h5>
+      <input [(ngModel)]="gitScore.username" required type='text' name='username'>
+      <button [disabled]='!formData.valid' >Check score</button>
+    </form>
+  </section>
+  <hr><hr>
+  <section class="display">
+    <div *ngIf="gitScore.score > 0">
+      <h2>Your score: {{ gitScore.score }} </h2>
+    </div>
+  </section>
+
+</div>
